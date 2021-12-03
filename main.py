@@ -4,10 +4,11 @@ import time
 word = client.Dispatch("Word.Application")
 
 
-def printWordDocument(Lab1):
-    word.Documents.Open(Lab1)
+def printWordDocument(filename):
+    word.Documents.Open(filename)
+    word.ActiveDocument.PrintOut()
     time.sleep(2)
     word.ActiveDocument.Close()
 
-
+printWordDocument()
 word.Quit()
